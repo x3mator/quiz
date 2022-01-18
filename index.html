@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Quiz Time - Выберите Quiz</title>
+	<link rel="preload" href="fonts/nunito-v20-latin_cyrillic-300.woff2" type="font/woff2" as="font" crossorigin="">
+	<link rel="preload" href="fonts/nunito-v20-latin_cyrillic-600.woff2" type="font/woff2" as="font" crossorigin="">
+	<link rel="preload" href="fonts/nunito-v20-latin_cyrillic-900.woff2" type="font/woff2" as="font" crossorigin="">
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/font.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header class="header">
+		<div class="header__container">
+			<a href="/">
+				<img src="img/logo.svg" alt="Логотип quiz time в виде элемента пазла" class="header__logo">
+			</a>
+			<h1 class="header__title">Quiz time</h1>
+		</div>
+	</header>
+	<main class="main">
+		<h2 class="main__title">Выберите Quiz</h2>
+		<div class="main__box selection">
+			<ul class="selection__list">
+				<li class="selection__item">
+					<button class="selection__theme">Финансовая грамотность</button>
+				</li>
+
+				<li class="selection__item">
+					<button class="selection__theme">Фронтенд разработка</button>
+					<p class="selection__result">
+						<span class="selection__result-ratio">7/10</span>
+						<span class="selection__result-text">Последний результат</span>
+					</p>
+				</li>
+
+				<li class="selection__item">
+					<button class="selection__theme">Бэкенд разработка</button>
+				</li>
+
+				<li class="selection__item">
+					<button class="selection__theme">Личные инвестиции</button>
+				</li>
+
+				<li class="selection__item">
+					<button class="selection__theme">Нутрициология</button>
+				</li>
+				<li class="selection__item">
+					<button class="selection__theme">Свободная тема</button>
+				</li>
+				<li class="selection__item">
+					<button class="selection__theme">Свободная тема</button>
+				</li>
+				<li class="selection__item">
+					<button class="selection__theme">Свободная тема</button>
+				</li>
+			</ul>
+		</div>
+		<div class="main__box main__box_question">
+			<form class="main__form-question" data-count="1/10">
+				<fieldset>
+					<legend class="main__subtitle">Какие типы input корректны?</legend>
+					<label class="answer">
+						<input class="answer__checkbox" type="checkbox" name="answer">text</label>
+
+					<label class="answer">
+						<input class="answer__checkbox" type="checkbox" name="answer">color</label>
+
+					<label class="answer">
+						<input class="answer__checkbox" type="checkbox" name="answer">week</label>
+
+					<label class="answer">
+						<input class="answer__checkbox" type="checkbox" name="answer">day</label>
+				</fieldset>
+
+				<button class="main__btn question_next">Подтвердить</button>
+			</form>
+		</div>
+		<div class="main__box main__box_question">
+			<form class="main__form-question" data-count="1/10">
+				<fieldset>
+					<legend class="main__subtitle">Какая столица является родиной демократии?</legend>
+					<label class="answer">
+						<input class="answer__radio" type="radio" name="answer">Рим</label>
+
+					<label class="answer">
+						<input class="answer__radio" type="radio" name="answer">Амстердам</label>
+
+					<label class="answer">
+						<input class="answer__radio" type="radio" name="answer">Афины</label>
+
+					<label class="answer">
+						<input class="answer__radio" type="radio" name="answer">Вашингтон</label>
+				</fieldset>
+
+				<button class="main__btn question_next">Подтвердить</button>
+			</form>
+		</div>
+
+		<div class="main__box main__box_result result">
+			<h2 class="main__subtitle main__subtitle_result">Ваш результат</h2>
+			<div class="result__box">
+				<p class="result__ratio">10/10</p>
+				<p class="result__text">Отличный результат!</p>
+			</div>
+
+			<button class="main__btn result__return">К списку квизов</button>
+		</div>
+	</main>
+</body>
+</html>
