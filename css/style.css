@@ -211,6 +211,7 @@ h1 {
     width: 40px;
     height: 40px;
     margin: 0 0 0 -65px;
+    outline: none;
 }
 
 .answer__checkbox::before {
@@ -261,6 +262,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    outline: none;
 }
 
 .answer__radio::before {
