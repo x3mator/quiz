@@ -8,7 +8,6 @@ const getData = () =>  fetch('db/quiz_db.json')
     .then(response => response.json());
 
 const renderTheme = (themes) => {
-  console.log("-> themes", themes);
   const list = document.querySelector('.selection__list');
   list.textContent = '';
 
@@ -126,7 +125,7 @@ const createAnswer = data => {
     input.name = 'answer';
     input.className = `answer__${type}`;
     input.value = i;
-    console.log(i)
+
     const text = document.createTextNode(item[0]);
 
     label.append(input, text);
@@ -235,8 +234,9 @@ const renderQuiz = quiz => {
         if(questionCount < quiz.list.length) {
           showQuestion()
         } else {
-          hideElem(questionBox)
-          showResult(result, quiz);
+          hideElem(questionBox, () => {
+            showResult(result, quiz);
+          })
           saveResult(result, quiz.id);
         }
 
@@ -253,8 +253,6 @@ const renderQuiz = quiz => {
   hideElem(selection, () => {
     showQuestion();
   });
-
-
 }
 
 const addClick = (buttons, data) => {
@@ -268,7 +266,6 @@ const addClick = (buttons, data) => {
 
 const initQuiz = async () => {
   const data = await getData();
-  console.log("-> data", data);
   
   const buttons = renderTheme(data);
 
