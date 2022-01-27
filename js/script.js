@@ -168,6 +168,7 @@ const showResult = (result, quiz) => {
   block.append(button);
 
   main.append(block);
+  showElem(block);
 
   button.addEventListener('click', () => {
     hideElem(block, () => {
@@ -184,7 +185,12 @@ const renderQuiz = quiz => {
   const questionBox = document.createElement('div');
   questionBox.className = 'main__box main__box_question';
 
-  main.append(questionBox);
+  hideElem(title);
+  hideElem(selection, () => {
+    main.append(questionBox);
+    showElem(questionBox);
+  });
+
 
   let result = 0;
   let questionCount = 0;
@@ -215,7 +221,7 @@ const renderQuiz = quiz => {
     form.append(fieldset, button);
 
     questionBox.append(form)
-    // showElem(questionBox);
+    showElem(form);
 
     form.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -234,10 +240,10 @@ const renderQuiz = quiz => {
         if(questionCount < quiz.list.length) {
           showQuestion()
         } else {
+          saveResult(result, quiz.id);
           hideElem(questionBox, () => {
             showResult(result, quiz);
           })
-          saveResult(result, quiz.id);
         }
 
       } else {
@@ -249,10 +255,8 @@ const renderQuiz = quiz => {
       }
     });
   }
-  hideElem(title);
-  hideElem(selection, () => {
-    showQuestion();
-  });
+
+  showQuestion();
 }
 
 const addClick = (buttons, data) => {

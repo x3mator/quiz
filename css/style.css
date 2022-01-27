@@ -98,7 +98,6 @@ h1 {
 
 }
 
-
 .selection {
     padding: 50px;
 }
@@ -175,12 +174,14 @@ h1 {
 }
 
 .main__box_question {
+    opacity: 0;
     padding: 60px 120px;
     height: auto;
     min-height: 540px;
 }
 
 .main__form-question {
+    opacity: 0;
     position: relative;
 }
 .main__form-question::after {
@@ -311,6 +312,7 @@ h1 {
 }
 
 .main__box_result {
+    opacity: 0;
     padding: 60px;
     display: flex;
     flex-direction: column;
